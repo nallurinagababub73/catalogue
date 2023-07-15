@@ -13,6 +13,9 @@ pipeline {
         stage ('test') {
           steps {
             sh 'echo test'
+            // sh 'npm test'
+            sh 'sonar-scanner -Dsonar.host.url=http://172.31.89.167:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=catalogue'
+
 
           }
         }
